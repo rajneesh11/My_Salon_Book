@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MySalonBook" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#E92B0D02</item>
+        <item name="colorPrimaryVariant">#E92B0D02</item>
+        <item name="colorOnPrimary">#E92B0D02</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#E92B0D02</item>
+        <item name="colorSecondaryVariant">#E92B0D02</item>
+        <item name="colorOnSecondary">#E92B0D02</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="customTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>
