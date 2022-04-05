@@ -18,6 +18,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.mysalonbook.R;
 import com.mysalonbook.activity.MainActivity;
+import com.mysalonbook.sharedprefs.SessionManager;
 import com.mysalonbook.utils.AppConfig;
 
 import org.json.JSONException;
@@ -38,6 +39,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 //        super.onViewCreated(view, savedInstanceState);
+        ((TextView)view.findViewById(R.id.user_name)).setText(new SessionManager(mainActivity).getUserName());
         RequestQueue requestQueue = Volley.newRequestQueue(mainActivity);
         mainActivity.showProgressBar();
 

@@ -10,4 +10,34 @@
     <color name="red">#BC0707</color>
     <color name="gray">#4C4B4B</color>
 
+    <color name="colorPrimary">#41729F</color>
+    <color name="colorPrimaryDark">#274472</color>
+    <color name="colorAccent">#477880</color>
+
+    <color name="colorPrimary2">#C3E0E5</color>
+    <color name="colorPrimaryDark2">#C3E0E5</color>
+    <color name="colorAccent2">#C3E0E5</color>
+<!--
+<color name="colorPrimary">#BDBDC7</color>
+    <color name="colorPrimaryDark">#505050</color>
+    <color name="colorAccent">#ECECEA</color>
+    <color name="colorPrimary2">#E3E3E1</color>
+    <color name="colorPrimaryDark2">#E3E3E1</color>
+    <color name="colorAccent2">#ECECEA</color>
+-->
+
+    <color name="divider_color">#8BAB90</color>
+
+    <color name="bg_login">#26ae90</color>
+    <color name="bg_register">#2e3237</color>
+    <color name="bg_main">#428bca</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
 </resources>

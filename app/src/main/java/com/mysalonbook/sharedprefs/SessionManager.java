@@ -29,16 +29,49 @@ public class SessionManager {
     }
 
     public void setLogin(boolean isLoggedIn) {
-
         editor.putBoolean(KEY_IS_LOGGED_IN, isLoggedIn);
-
         // commit changes
         editor.commit();
-
-        Log.d(TAG, "User login session modified!");
+//        Log.d(TAG, "User login session modified!");
     }
 
-    public boolean isLoggedIn(){
+    public boolean isLoggedIn() {
         return pref.getBoolean(KEY_IS_LOGGED_IN, false);
+    }
+
+    public void setUserName(String username) {
+        editor.putString("username", username);
+        editor.commit();
+    }
+
+    public String getUserName() {
+        return pref.getString("username", "");
+    }
+
+    public void setUserId(String uid) {
+        editor.putString("uid", uid);
+        editor.commit();
+    }
+
+    public String getUserId() {
+        return pref.getString("uid", "");
+    }
+
+    public void setUserPhone(String phone){
+        editor.putString("phone", phone);
+        editor.commit();
+    }
+
+    public String getUserPhone(){
+        return pref.getString("phone", "");
+    }
+
+    public void setUserAddress(String address){
+        editor.putString("address", address);
+        editor.commit();
+    }
+
+    public String getUserAddress(){
+        return pref.getString("address", "");
     }
 }

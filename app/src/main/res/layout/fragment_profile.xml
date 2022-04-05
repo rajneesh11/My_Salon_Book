@@ -18,18 +18,14 @@
             android:paddingBottom="10dp"
             android:text="Name"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/profile_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittxt_bg"
-            android:hint="Enter your name"
-            android:inputType="textPersonName"
             android:padding="10dp"
-            android:textColorHint="@color/white"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -47,17 +43,13 @@
             android:textColor="@color/white"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/profile_user_mobile"
+        <TextView
+            android:id="@+id/profile_user_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittxt_bg"
-            android:hint="Enter Mobile Number"
-            android:inputType="phone"
-            android:maxLength="10"
             android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -74,21 +66,18 @@
             android:textColor="@color/white"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/profile_user_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittxt_bg"
             android:gravity="top|start"
-            android:hint="Enter Address"
-            android:inputType="textMultiLine"
             android:lines="8"
             android:maxLines="10"
             android:minLines="6"
             android:padding="10dp"
             android:scrollbars="vertical"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <Button
@@ -97,8 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="#299560"
-        android:textAllCaps="false"
         android:text="Submit"
-        android:textColor="@color/white" />
+        android:visibility="gone" />
+    <!--    android:backgroundTint="#299560"-->
 </LinearLayout>

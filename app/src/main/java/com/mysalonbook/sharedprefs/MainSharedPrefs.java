@@ -27,11 +27,4 @@ public class MainSharedPrefs {
         editor.apply();
     }
 
-    public void setReceiptNo(String receiptNo) {
-        editor.putString("receipt_no", receiptNo).apply();
-    }
-
-    public String getReceiptNo() {
-        return sharedPreferences.getString("receipt_no", "");
-    }
 }
