@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/edittxt_bg.xml" value="0.145" />
         <entry key="app/src/main/res/drawable/app_nav_bg.xml" value="0.145" />
+        <entry key="app/src/main/res/drawable/ic_add_24.xml" value="0.1625" />
         <entry key="app/src/main/res/drawable/list_item_bg.xml" value="0.1435" />
         <entry key="app/src/main/res/drawable/main_bg.xml" value="0.1435" />
         <entry key="app/src/main/res/drawable/outline_more_vert_24.xml" value="0.1435" />
@@ -14,7 +15,7 @@
         <entry key="app/src/main/res/layout/bookings_adapter.xml" value="0.505" />
         <entry key="app/src/main/res/layout/edittxt_bg.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/layout/fragment_bookings.xml" value="0.505" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.505" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.42291666666666666" />
         <entry key="app/src/main/res/layout/fragment_login1.xml" value="0.475" />
         <entry key="app/src/main/res/layout/fragment_old_booking.xml" value="0.4879518072289157" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.475" />

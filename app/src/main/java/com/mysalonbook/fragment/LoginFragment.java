@@ -81,6 +81,12 @@ public class LoginFragment extends Fragment {
                 if (activity.isInternetConnected())
                     if (etPhone.getText().toString().equalsIgnoreCase("admin") &&
                             etPassword.getText().toString().equalsIgnoreCase("admin123")) {
+                        session.setLogin(true);
+                        // Now store the user in SQLite
+                        session.setUserId("admin");
+                        session.setUserName("My Salon");
+                        session.setUserPhone("--NA--");
+                        session.setUserAddress("My Salon");
                         Intent intent = new Intent(activity, MainActivity.class);
                         startActivity(intent);
                         activity.finish();

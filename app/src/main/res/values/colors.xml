@@ -13,6 +13,9 @@
     <color name="colorPrimary">#41729F</color>
     <color name="colorPrimaryDark">#274472</color>
     <color name="colorAccent">#477880</color>
+    <!--<color name="colorPrimary">#41729F</color>
+    <color name="colorPrimaryDark">#274472</color>
+    <color name="colorAccent">#477880</color>-->
 
     <color name="colorPrimary2">#C3E0E5</color>
     <color name="colorPrimaryDark2">#C3E0E5</color>
