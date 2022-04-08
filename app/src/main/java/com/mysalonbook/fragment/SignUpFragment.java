@@ -47,9 +47,6 @@ public class SignUpFragment extends Fragment {
     private EditText etAddress;
 
     @NotEmpty
-    private EditText etArea;
-
-    @NotEmpty
     @Password
     private EditText etPassword;
 
@@ -121,7 +118,6 @@ public class SignUpFragment extends Fragment {
         params.put("name", etName.getText().toString());
         params.put("phone", etPhone.getText().toString());
         params.put("address", etAddress.getText().toString());
-        params.put("area", etArea.getText().toString());
         params.put("password", etPassword.getText().toString());
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, AppConfig.URL_SIGN_UP, new JSONObject(params), new Response.Listener<JSONObject>() {

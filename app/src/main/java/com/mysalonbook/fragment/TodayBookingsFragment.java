@@ -22,6 +22,7 @@ import com.mysalonbook.R;
 import com.mysalonbook.activity.MainActivity;
 import com.mysalonbook.adapter.ShowBookingAdapter;
 import com.mysalonbook.model.Booking;
+import com.mysalonbook.sharedprefs.SessionManager;
 import com.mysalonbook.utils.AppConfig;
 
 import org.json.JSONArray;
@@ -38,6 +39,7 @@ public class TodayBookingsFragment extends Fragment {
     private TextView tvNoBookings;
     private RequestQueue requestQueue;
     private final MainActivity mainActivity;
+    private SessionManager sessionManager;
 
     public TodayBookingsFragment(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
@@ -53,6 +55,7 @@ public class TodayBookingsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 //        super.onViewCreated(view, savedInstanceState);
         requestQueue = Volley.newRequestQueue(mainActivity);
+        sessionManager = new SessionManager(mainActivity);
         bookingList = new ArrayList<>();
         lvTodayBookingsList = view.findViewById(R.id.lv_today_bookings);
         tvNoBookings = view.findViewById(R.id.tv_no_booking_today);
@@ -62,10 +65,10 @@ public class TodayBookingsFragment extends Fragment {
     private void fetchBookingData() {
         Map<String, String> params = new HashMap<>();
         params.put("bookings_data", "today");
-        params.put("user", "my_salon_owner");
+        params.put("user", sessionManager.getUserId());
         mainActivity.showProgressBar();
         bookingList.clear();
-        ShowBookingAdapter bookingAdapter = new ShowBookingAdapter(bookingList, mainActivity, "today");
+        ShowBookingAdapter bookingAdapter = new ShowBookingAdapter(bookingList, mainActivity, "today", sessionManager);
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, AppConfig.URL_BOOKING_READ, new JSONObject(params),
                 new Response.Listener<JSONObject>() {
                     @Override

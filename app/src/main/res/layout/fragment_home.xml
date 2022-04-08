@@ -73,9 +73,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_add_24"
-        app:fabSize="normal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/white"
-        android:contentDescription="Create" />
+        android:contentDescription="Create"
+        android:src="@drawable/ic_add_24"
+        app:fabSize="normal" />
 </RelativeLayout>

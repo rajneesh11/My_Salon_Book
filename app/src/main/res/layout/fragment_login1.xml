@@ -7,8 +7,9 @@
         android:id="@+id/login_phone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/white"
+        android:background="@drawable/edittxt_bg"
         android:hint="email"
         android:inputType="textEmailAddress"
         android:padding="10dp"
@@ -18,8 +19,9 @@
         android:id="@+id/login_password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/white"
+        android:background="@drawable/edittxt_bg"
         android:hint="password"
         android:inputType="textPassword"
         android:padding="10dp"
@@ -31,7 +33,9 @@
         android:id="@+id/btnLogin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:backgroundTint="@color/white"
         android:text="Login" />
 
     <!-- Link to Login Screen -->
@@ -51,17 +55,6 @@
             android:textAlignment="textStart"
             android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/sign_up"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="SIGN UP"
-            android:textAlignment="textEnd"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:visibility="gone" />
 
     </LinearLayout>
 

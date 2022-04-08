@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.mysalonbook.R;
 import com.mysalonbook.activity.MainActivity;
 import com.mysalonbook.model.Booking;
+import com.mysalonbook.sharedprefs.SessionManager;
 
 import java.util.ArrayList;
 
@@ -21,11 +22,13 @@ public class ShowBookingAdapter extends BaseAdapter {
     private ArrayList<Booking> bookingList;
     private MainActivity mainActivity;
     private final String from;
+    private SessionManager sessionManager;
 
-    public ShowBookingAdapter(ArrayList<Booking> bookingList, MainActivity mainActivity, String from) {
+    public ShowBookingAdapter(ArrayList<Booking> bookingList, MainActivity mainActivity, String from, SessionManager sessionManager) {
         this.bookingList = bookingList;
         this.mainActivity = mainActivity;
         this.from = from;
+        this.sessionManager = sessionManager;
     }
 
     @Override
@@ -46,7 +49,7 @@ public class ShowBookingAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         MyViewHolder viewHolder;
-        String[] slot = {"09:00 AM - 11:00 AM", "11:00 AM - 01:00 PM", "01:00 PM - 03:00 PM", "03:00 PM - 05:00 PM", "05:00 PM - 07:00 PM"};
+        String[] slot = mainActivity.getResources().getStringArray(R.array.salon_slots);//{"09:00 AM - 11:00 AM", "11:00 AM - 01:00 PM", "01:00 PM - 03:00 PM", "03:00 PM - 05:00 PM", "05:00 PM - 07:00 PM"};
         LayoutInflater inflater = (LayoutInflater) mainActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 //        LayoutInflater inflater = LayoutInflater.from(view.getContext());
         if (view == null) {
@@ -60,7 +63,7 @@ public class ShowBookingAdapter extends BaseAdapter {
             view.setTag(viewHolder);
         } else viewHolder = (MyViewHolder) view.getTag();
         viewHolder.tvJob.setText(getItem(i).getJob());
-        String dateTime = getItem(i).getBookedDate() + ", " + slot[getItem(i).getSlot() - 1];
+        String dateTime = getItem(i).getBookedDate() + ", " + slot[getItem(i).getSlot()];
         viewHolder.tvDateTime.setText(dateTime);
         viewHolder.tvUser.setText(getItem(i).getUser());
         String[] jobServed = {"Pending", "Completed"};
@@ -86,6 +89,10 @@ public class ShowBookingAdapter extends BaseAdapter {
         MenuInflater inflater = popup.getMenuInflater();
 
         inflater.inflate(R.menu.booking_menu, popup.getMenu());
+        if (getItem(i).getCancelled() == 1)
+            popup.getMenu().getItem(0).setEnabled(false);
+        if (!sessionManager.getUserId().equalsIgnoreCase("admin"))
+            popup.getMenu().getItem(1).setEnabled(false);
 
         //set menu item click listener here
         popup.setOnMenuItemClickListener(new MyMenuItemClickListener(getItem(i).getId(), mainActivity, this));
