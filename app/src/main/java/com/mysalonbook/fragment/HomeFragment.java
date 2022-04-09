@@ -121,6 +121,8 @@ public class HomeFragment extends Fragment {
 
                                     }
                                 }, mYear, mMonth, mDay);
+                        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+                        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis() + 1296000000);
                         datePickerDialog.show();
                     }
                 });
