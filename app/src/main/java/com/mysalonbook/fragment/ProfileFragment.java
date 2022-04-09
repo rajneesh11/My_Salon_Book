@@ -30,7 +30,7 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         SessionManager sessionManager = new SessionManager(mainActivity);
         ((TextView)view.findViewById(R.id.profile_user_name)).setText(sessionManager.getUserName());
-        ((TextView)view.findViewById(R.id.profile_user_phone)).setText(sessionManager.getUserPhone());
+        ((TextView)view.findViewById(R.id.profile_user_phone)).setText(sessionManager.getUserEmail());
         ((TextView)view.findViewById(R.id.profile_user_address)).setText(sessionManager.getUserAddress());
     }
 }

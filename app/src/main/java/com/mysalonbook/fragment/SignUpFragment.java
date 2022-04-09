@@ -40,8 +40,7 @@ public class SignUpFragment extends Fragment {
     private EditText etName;
 
     @NotEmpty
-    @Length(max = 10)
-    private EditText etPhone;
+    private EditText etEmail;
 
     @NotEmpty
     private EditText etAddress;
@@ -71,7 +70,7 @@ public class SignUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 //        super.onViewCreated(view, savedInstanceState);
         etName = view.findViewById(R.id.sign_up_name);
-        etPhone = view.findViewById(R.id.sign_up_phone);
+        etEmail = view.findViewById(R.id.sign_up_email);
         etAddress = view.findViewById(R.id.sign_up_address);
         etPassword = view.findViewById(R.id.sign_up_password);
         etConfirmPassword = view.findViewById(R.id.sign_up_password_confirm);
@@ -110,13 +109,11 @@ public class SignUpFragment extends Fragment {
     }
 
     private void registerAPI(RequestQueue requestQueue) {
-        String tag_string_req = "req_singup";
-
         activity.showProgressBar();
 
         Map<String, String> params = new HashMap<>();
         params.put("name", etName.getText().toString());
-        params.put("phone", etPhone.getText().toString());
+        params.put("email", etEmail.getText().toString());
         params.put("address", etAddress.getText().toString());
         params.put("password", etPassword.getText().toString());
 
@@ -125,12 +122,12 @@ public class SignUpFragment extends Fragment {
             public void onResponse(JSONObject response) {
                 activity.stopProgressBar();
                 try {
-                    if (!response.getBoolean("error")) {
+                    if (response.getBoolean("status")) {
                         Toast.makeText(activity, "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
 //                        activity.getSupportFragmentManager().popBackStack();
                         activity.loadLoginFrags(new LoginFragment(activity), 0.5f, 1f);
                     } else {
-                        String errorMsg = response.getString("error_msg");
+                        String errorMsg = response.getString("status");
                         Toast.makeText(activity, errorMsg, Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {

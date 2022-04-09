@@ -43,6 +43,8 @@
             android:background="@color/white" />
 
         <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_booking_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

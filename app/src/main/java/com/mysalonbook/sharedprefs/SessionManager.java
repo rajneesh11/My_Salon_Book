@@ -57,13 +57,13 @@ public class SessionManager {
         return pref.getString("uid", "");
     }
 
-    public void setUserPhone(String phone){
-        editor.putString("phone", phone);
+    public void setUserEmail(String email){
+        editor.putString("email", email);
         editor.commit();
     }
 
-    public String getUserPhone(){
-        return pref.getString("phone", "");
+    public String getUserEmail(){
+        return pref.getString("email", "");
     }
 
     public void setUserAddress(String address){

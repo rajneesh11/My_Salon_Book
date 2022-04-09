@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="Mobile"
+            android:text="Email"
             android:textColor="@color/white"
             android:textStyle="bold" />
 

@@ -85,7 +85,7 @@ public class LoginFragment extends Fragment {
                         // Now store the user in SQLite
                         session.setUserId("admin");
                         session.setUserName("My Salon");
-                        session.setUserPhone("--NA--");
+                        session.setUserEmail("--NA--");
                         session.setUserAddress("My Salon");
                         Intent intent = new Intent(activity, MainActivity.class);
                         startActivity(intent);
@@ -133,7 +133,7 @@ public class LoginFragment extends Fragment {
                                 // Now store the user in SQLite
                                 session.setUserId(response.getString("id"));
                                 session.setUserName(response.getString("username"));
-                                session.setUserPhone(response.getString("phone"));
+                                session.setUserEmail(response.getString("email"));
                                 session.setUserAddress(response.getString("address"));
 
                                 // Launch main activity

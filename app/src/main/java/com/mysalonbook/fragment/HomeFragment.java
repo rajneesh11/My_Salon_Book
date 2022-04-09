@@ -63,9 +63,15 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 //        super.onViewCreated(view, savedInstanceState);
+        ((TextView) view.findViewById(R.id.user_name)).setText(new SessionManager(mainActivity).getUserName());
+        requestQueue = Volley.newRequestQueue(mainActivity);
+
         FloatingActionButton fabNewBooking = view.findViewById(R.id.fab_new_booking);
-        if (sessionManager.getUserId().equalsIgnoreCase("admin"))
+        if (sessionManager.getUserId().equalsIgnoreCase("admin")) {
             fabNewBooking.setVisibility(View.GONE);
+            view.findViewById(R.id.ll_booking_count).setVisibility(View.VISIBLE);
+            getTodayBookingsApi(view);
+        }
 
         fabNewBooking.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,12 +154,6 @@ public class HomeFragment extends Fragment {
                 dialog.show();
             }
         });
-
-
-        ((TextView) view.findViewById(R.id.user_name)).setText(new SessionManager(mainActivity).getUserName());
-        requestQueue = Volley.newRequestQueue(mainActivity);
-
-        getTodayBookingsApi(view);
     }
 
     private void getTodayBookingsApi(@NonNull View view) {
